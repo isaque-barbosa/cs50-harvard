@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: I ran the random and sorted and compared it to the other algorithms, and I know that the Bubble Sort would be better than Selection if the scenario is already sorted, and because of that I discovered the answer.
+
+sort2 uses: Merge Sort
+
+How do you know?: I knew that the Merge Sort would be way better in the random scenario, so knowing that and comparing it with others I discovered which one is the Merge, and I also knew that his behavior would be similar to the already sorted scenario.
+
+sort3 uses: Selection Sort
+
+How do you know?: For the last, when I had the response and comparison of the other algorithms, it only lasted the Selection Sort.

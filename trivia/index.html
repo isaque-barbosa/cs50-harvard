@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            // document.addEventListener('DOMContentLoaded', function() {
+
+            // });
+
+            function isAnswerRight(event)
+            {
+                let elements = document.querySelectorAll('button[type="button"]');
+                elements.forEach(function(element) {
+                    element.className = '';
+                });
+                let answer = document.getElementById('answer1');
+                answer.className = '';
+                if (event.target.innerText == "Russia")
+                {
+                    event.target.classList.add("correct");
+                    answer.innerText = "Correct!";
+                    answer.classList.add("correct");
+                }
+                else
+                {
+                    event.target.classList.add("incorrect");
+                    answer.innerText = "Incorrect!";
+                    answer.classList.add("incorrect");
+                }
+            }
+
+            function isCountryAnswerRight()
+            {
+                let countryAnswer = document.getElementById('countryAnswer');
+                let answer = document.getElementById('answer2');
+                answer.className = '';
+                countryAnswer.className = '';
+                if (countryAnswer.value.trim().toLowerCase() == "brazil")
+                {
+                    countryAnswer.classList.add("correct");
+                    answer.innerText = "Correct!";
+                    answer.classList.add("correct");
+                }
+                else
+                {
+                    countryAnswer.classList.add("incorrect");
+                    answer.innerText = "Incorrect!";
+                    answer.classList.add("incorrect");
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which country is the largest in the world?</h3>
+
+                <div class="row">
+                    <button type="button" onclick="isAnswerRight(event)">Brazil</button>
+                    <button type="button" onclick="isAnswerRight(event)">Russia</button>
+                    <button type="button" onclick="isAnswerRight(event)">India</button>
+                    <button type="button" onclick="isAnswerRight(event)">China</button>
+                    <button type="button" onclick="isAnswerRight(event)">South Africa</button>
+                </div>
+
+                <div class="row">
+                    <small id="answer1"></small>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+
+                <form onsubmit="isCountryAnswerRight(); return false;">
+                    <label>Which country has the Christ the Redeemer?</label>
+                    <input type="text" id="countryAnswer" placeholder="What is the response?" />
+                    <button type="submit">Answer</button>
+                </form>
+
+                <div class="row">
+                    <small id="answer2"></small>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>

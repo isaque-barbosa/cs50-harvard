@@ -1,0 +1,35 @@
+#mainContent {
+    padding: 0 2% 0 2%;
+    background-color: #abb8c3;
+}
+
+.bg-havard {
+    background-color: #cf2e2e;
+    color: white;
+    border-radius: 15px;
+    small {
+        padding: 0 2% 0 2%;
+    }
+}
+
+.card {
+    width: 18rem;
+    img {
+        height: 10rem;
+    }
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.active {
+    background-color: #e76464ba;
+    border-radius: 35%;
+}

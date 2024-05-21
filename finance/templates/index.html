@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">TOTAL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- TODO: Loop through the database entries to display them in this table -->
+        {% for quote in user.quotes %}
+            <tr>
+                <th scope="row">{{ quote.symbol }}</th>
+                <td>{{ quote.name }}</td>
+                <td>{{ quote.quantity }}</td>
+                <td>{{ quote.price | usd }}</td>
+                <td>{{ quote.total | usd }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <th scope="row">CASH</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ user.currentMoney | usd }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th scope="row">{{ user.originalMoney | usd }}</th scope="row">
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

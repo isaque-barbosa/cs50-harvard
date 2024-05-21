@@ -1,0 +1,13 @@
+CREATE TABLE transactions(
+	id INTEGER,
+	user_id INTEGER NOT NULL,
+	symbol TEXT NOT NULL,
+	name TEXT NOT NULL,
+	type TEXT NOT NULL,
+	price NUMERIC NOT NULL,
+	quantity INTEGER NOT NULL,
+	createdAt DATETIME NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(user_id) REFERENCES users(id)
+);
+CREATE INDEX user_id ON transactions (user_id);
